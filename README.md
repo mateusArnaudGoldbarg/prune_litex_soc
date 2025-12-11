@@ -1,1 +1,1 @@
-# prune_liex_soc
+# prune_litex_soc
