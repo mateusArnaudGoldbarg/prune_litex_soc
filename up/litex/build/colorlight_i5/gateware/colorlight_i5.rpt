@@ -1,0 +1,10 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.57+268 (git sha1 47ca09a01, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `colorlight_i5.ys' --
+ERROR: File `/home/mateus/Documentos/embarca/colorlight-i9-examples/up/litex/rtl/dotProduct.sv' not found or is a directory
