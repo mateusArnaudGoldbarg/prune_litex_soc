@@ -42,8 +42,11 @@ class DotProduct(LiteXModule):
         
         self._c = CSRStorage(32, name="bias")
         
+        self._nnz = CSRStorage(8, name="nnz")
         self._result = CSRStatus(64, name="result")
         self._busy   = CSRStatus(1, name="busy")
+        self._cycles = CSRStatus(32, name="cycles")
+
 
         # sinais internos
         start_sig  = Signal()
@@ -53,14 +56,19 @@ class DotProduct(LiteXModule):
         
         c_sig = Signal((32, True))
         
+        nnz_sig = Signal(8)
+        
         result_sig = Signal((64, True))
         busy_sig   = Signal()
+        
+        cycles_sig = Signal(32)
 
         # instância do módulo SV
         self.specials += Instance("dotproduct",
             i_clk_i    = ClockSignal(),
             i_rst_ni   = ~ResetSignal(),
             i_start_i  = start_sig,
+            i_nnz_i    = nnz_sig,
             # Vetores A
             **{f"i_a{i}_i": a_sigs[i] for i in range(10)},
             # Vetores B
@@ -69,7 +77,8 @@ class DotProduct(LiteXModule):
             i_c_i = c_sig,
             
             o_result_o = result_sig,
-            o_busy_o   = busy_sig
+            o_busy_o   = busy_sig,
+            o_cycle_count_o = cycles_sig
         )
 
         # Mapeamento dos CSRs -> sinais internos
@@ -79,7 +88,9 @@ class DotProduct(LiteXModule):
             self._busy.status.eq(busy_sig),
             
             c_sig.eq(self._c.storage), # bias
-            
+            nnz_sig.eq(self._nnz.storage),
+            self._cycles.status.eq(cycles_sig),
+
             a_sigs[0].eq(self._a0.storage),
             a_sigs[1].eq(self._a1.storage),
             a_sigs[2].eq(self._a2.storage),

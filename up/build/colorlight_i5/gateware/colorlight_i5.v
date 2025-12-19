@@ -9,7 +9,7 @@
 // Filename   : colorlight_i5.v
 // Device     : LFE5U-45F-6BG381C
 // LiteX sha1 : 3122ce421
-// Date       : 2025-12-18 11:37:03
+// Date       : 2025-12-19 00:48:50
 //------------------------------------------------------------------------------
 
 `timescale 1ns / 1ps
@@ -223,8 +223,10 @@ BaseSoC
 │    │    └─── csrstorage_19* (CSRStorage)
 │    │    └─── csrstorage_20* (CSRStorage)
 │    │    └─── csrstorage_21* (CSRStorage)
+│    │    └─── csrstorage_22* (CSRStorage)
 │    │    └─── csrstatus_0* (CSRStatus)
 │    │    └─── csrstatus_1* (CSRStatus)
+│    │    └─── csrstatus_2* (CSRStatus)
 │    └─── sram_0* (SRAM)
 │    └─── csrbank_2* (CSRBank)
 │    │    └─── csrstorage_0* (CSRStorage)
@@ -262,6 +264,66 @@ BaseSoC
 └─── [TRELLIS_IO]
 └─── [TRELLIS_IO]
 └─── [TRELLIS_IO]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [TRELLIS_IO]
+└─── [TRELLIS_IO]
+└─── [TRELLIS_IO]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [TRELLIS_IO]
+└─── [TRELLIS_IO]
+└─── [TRELLIS_IO]
+└─── [TRELLIS_IO]
+└─── [TRELLIS_IO]
+└─── [TRELLIS_IO]
+└─── [TRELLIS_IO]
+└─── [TRELLIS_IO]
 └─── [TRELLIS_IO]
 └─── [TRELLIS_IO]
 └─── [TRELLIS_IO]
@@ -278,8 +340,8 @@ BaseSoC
 └─── [FD1S3BX]
 └─── [ODDRX1F]
 └─── [OFS1P3BX]
-└─── [OFS1P3BX]
 └─── [IFS1P3BX]
+└─── [OFS1P3BX]
 └─── [OFS1P3BX]
 └─── [OFS1P3BX]
 └─── [OFS1P3BX]
@@ -302,114 +364,54 @@ BaseSoC
 └─── [TRELLIS_IO]
 └─── [TRELLIS_IO]
 └─── [TRELLIS_IO]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
-└─── [OFS1P3BX]
-└─── [IFS1P3BX]
 └─── [TRELLIS_IO]
-└─── [TRELLIS_IO]
-└─── [TRELLIS_IO]
-└─── [TRELLIS_IO]
-└─── [TRELLIS_IO]
-└─── [TRELLIS_IO]
-└─── [TRELLIS_IO]
-└─── [TRELLIS_IO]
-└─── [TRELLIS_IO]
-└─── [TRELLIS_IO]
-└─── [TRELLIS_IO]
-└─── [TRELLIS_IO]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [IFS1P3BX]
+└─── [IFS1P3BX]
+└─── [OFS1P3BX]
+└─── [OFS1P3BX]
 └─── [TRELLIS_IO]
 * : Generated name.
 []: BlackBox.
@@ -995,6 +997,14 @@ wire          csr_bankarray_csrbank1_busy_r;
 reg           csr_bankarray_csrbank1_busy_re = 1'd0;
 wire          csr_bankarray_csrbank1_busy_w;
 reg           csr_bankarray_csrbank1_busy_we = 1'd0;
+wire   [31:0] csr_bankarray_csrbank1_cycles_r;
+reg           csr_bankarray_csrbank1_cycles_re = 1'd0;
+wire   [31:0] csr_bankarray_csrbank1_cycles_w;
+reg           csr_bankarray_csrbank1_cycles_we = 1'd0;
+wire    [7:0] csr_bankarray_csrbank1_nnz0_r;
+reg           csr_bankarray_csrbank1_nnz0_re = 1'd0;
+wire    [7:0] csr_bankarray_csrbank1_nnz0_w;
+reg           csr_bankarray_csrbank1_nnz0_we = 1'd0;
 wire   [31:0] csr_bankarray_csrbank1_result0_r;
 reg           csr_bankarray_csrbank1_result0_re = 1'd0;
 wire   [31:0] csr_bankarray_csrbank1_result0_w;
@@ -1169,6 +1179,10 @@ wire   [31:0] csr_interconnect_dat_r;
 wire   [31:0] csr_interconnect_dat_w;
 wire          csr_interconnect_re;
 wire          csr_interconnect_we;
+reg           cycles_re = 1'd0;
+wire   [31:0] cycles_sig;
+wire   [31:0] cycles_status;
+wire          cycles_we;
 wire    [8:0] data_port_adr;
 wire  [127:0] data_port_dat_r;
 reg   [127:0] data_port_dat_w = 128'd0;
@@ -1421,6 +1435,9 @@ wire    [7:0] mmap_spi_dummy_bits;
 reg     [7:0] mmap_storage = 8'd0;
 reg           mmap_wait = 1'd0;
 reg           mode = 1'd0;
+reg           nnz_re = 1'd0;
+wire    [7:0] nnz_sig;
+reg     [7:0] nnz_storage = 8'd0;
 reg    [20:0] port_cmd_payload_addr = 21'd0;
 reg           port_cmd_payload_we = 1'd0;
 wire          port_cmd_ready;
@@ -2730,6 +2747,8 @@ assign start_sig = start;
 assign result_status = result_sig;
 assign busy_status = busy_sig;
 assign c_sig = _c_storage;
+assign nnz_sig = nnz_storage;
+assign cycles_status = cycles_sig;
 assign a_sigs0 = a0_storage;
 assign a_sigs1 = a1_storage;
 assign a_sigs2 = a2_storage;
@@ -4906,11 +4925,20 @@ always @(*) begin
         csr_bankarray_csrbank1_bias0_we <= csr_bankarray_interface1_bank_bus_re;
     end
 end
+assign csr_bankarray_csrbank1_nnz0_r = csr_bankarray_interface1_bank_bus_dat_w[7:0];
+always @(*) begin
+    csr_bankarray_csrbank1_nnz0_re <= 1'd0;
+    csr_bankarray_csrbank1_nnz0_we <= 1'd0;
+    if ((csr_bankarray_csrbank1_sel & (csr_bankarray_interface1_bank_bus_adr[8:0] == 5'd22))) begin
+        csr_bankarray_csrbank1_nnz0_re <= csr_bankarray_interface1_bank_bus_we;
+        csr_bankarray_csrbank1_nnz0_we <= csr_bankarray_interface1_bank_bus_re;
+    end
+end
 assign csr_bankarray_csrbank1_result1_r = csr_bankarray_interface1_bank_bus_dat_w;
 always @(*) begin
     csr_bankarray_csrbank1_result1_re <= 1'd0;
     csr_bankarray_csrbank1_result1_we <= 1'd0;
-    if ((csr_bankarray_csrbank1_sel & (csr_bankarray_interface1_bank_bus_adr[8:0] == 5'd22))) begin
+    if ((csr_bankarray_csrbank1_sel & (csr_bankarray_interface1_bank_bus_adr[8:0] == 5'd23))) begin
         csr_bankarray_csrbank1_result1_re <= csr_bankarray_interface1_bank_bus_we;
         csr_bankarray_csrbank1_result1_we <= csr_bankarray_interface1_bank_bus_re;
     end
@@ -4919,7 +4947,7 @@ assign csr_bankarray_csrbank1_result0_r = csr_bankarray_interface1_bank_bus_dat_
 always @(*) begin
     csr_bankarray_csrbank1_result0_re <= 1'd0;
     csr_bankarray_csrbank1_result0_we <= 1'd0;
-    if ((csr_bankarray_csrbank1_sel & (csr_bankarray_interface1_bank_bus_adr[8:0] == 5'd23))) begin
+    if ((csr_bankarray_csrbank1_sel & (csr_bankarray_interface1_bank_bus_adr[8:0] == 5'd24))) begin
         csr_bankarray_csrbank1_result0_re <= csr_bankarray_interface1_bank_bus_we;
         csr_bankarray_csrbank1_result0_we <= csr_bankarray_interface1_bank_bus_re;
     end
@@ -4928,9 +4956,18 @@ assign csr_bankarray_csrbank1_busy_r = csr_bankarray_interface1_bank_bus_dat_w[0
 always @(*) begin
     csr_bankarray_csrbank1_busy_re <= 1'd0;
     csr_bankarray_csrbank1_busy_we <= 1'd0;
-    if ((csr_bankarray_csrbank1_sel & (csr_bankarray_interface1_bank_bus_adr[8:0] == 5'd24))) begin
+    if ((csr_bankarray_csrbank1_sel & (csr_bankarray_interface1_bank_bus_adr[8:0] == 5'd25))) begin
         csr_bankarray_csrbank1_busy_re <= csr_bankarray_interface1_bank_bus_we;
         csr_bankarray_csrbank1_busy_we <= csr_bankarray_interface1_bank_bus_re;
+    end
+end
+assign csr_bankarray_csrbank1_cycles_r = csr_bankarray_interface1_bank_bus_dat_w;
+always @(*) begin
+    csr_bankarray_csrbank1_cycles_re <= 1'd0;
+    csr_bankarray_csrbank1_cycles_we <= 1'd0;
+    if ((csr_bankarray_csrbank1_sel & (csr_bankarray_interface1_bank_bus_adr[8:0] == 5'd26))) begin
+        csr_bankarray_csrbank1_cycles_re <= csr_bankarray_interface1_bank_bus_we;
+        csr_bankarray_csrbank1_cycles_we <= csr_bankarray_interface1_bank_bus_re;
     end
 end
 always @(*) begin
@@ -4961,11 +4998,14 @@ assign csr_bankarray_csrbank1_b70_w = b7_storage;
 assign csr_bankarray_csrbank1_b80_w = b8_storage;
 assign csr_bankarray_csrbank1_b90_w = b9_storage;
 assign csr_bankarray_csrbank1_bias0_w = _c_storage;
+assign csr_bankarray_csrbank1_nnz0_w = nnz_storage;
 assign csr_bankarray_csrbank1_result1_w = result_status[63:32];
 assign csr_bankarray_csrbank1_result0_w = result_status[31:0];
 assign result_we = csr_bankarray_csrbank1_result0_we;
 assign csr_bankarray_csrbank1_busy_w = busy_status;
 assign busy_we = csr_bankarray_csrbank1_busy_we;
+assign csr_bankarray_csrbank1_cycles_w = cycles_status;
+assign cycles_we = csr_bankarray_csrbank1_cycles_we;
 assign csr_bankarray_sel = (csr_bankarray_sram_bus_adr[13:9] == 2'd2);
 always @(*) begin
     csr_bankarray_sram_bus_dat_r <= 32'd0;
@@ -6909,13 +6949,19 @@ always @(posedge sys_clk) begin
                 csr_bankarray_interface1_bank_bus_dat_r <= csr_bankarray_csrbank1_bias0_w;
             end
             5'd22: begin
-                csr_bankarray_interface1_bank_bus_dat_r <= csr_bankarray_csrbank1_result1_w;
+                csr_bankarray_interface1_bank_bus_dat_r <= csr_bankarray_csrbank1_nnz0_w;
             end
             5'd23: begin
-                csr_bankarray_interface1_bank_bus_dat_r <= csr_bankarray_csrbank1_result0_w;
+                csr_bankarray_interface1_bank_bus_dat_r <= csr_bankarray_csrbank1_result1_w;
             end
             5'd24: begin
+                csr_bankarray_interface1_bank_bus_dat_r <= csr_bankarray_csrbank1_result0_w;
+            end
+            5'd25: begin
                 csr_bankarray_interface1_bank_bus_dat_r <= csr_bankarray_csrbank1_busy_w;
+            end
+            5'd26: begin
+                csr_bankarray_interface1_bank_bus_dat_r <= csr_bankarray_csrbank1_cycles_w;
             end
         endcase
     end
@@ -7007,8 +7053,13 @@ always @(posedge sys_clk) begin
         _c_storage <= csr_bankarray_csrbank1_bias0_r;
     end
     _c_re <= csr_bankarray_csrbank1_bias0_re;
+    if (csr_bankarray_csrbank1_nnz0_re) begin
+        nnz_storage <= csr_bankarray_csrbank1_nnz0_r;
+    end
+    nnz_re <= csr_bankarray_csrbank1_nnz0_re;
     result_re <= csr_bankarray_csrbank1_result0_re;
     busy_re <= csr_bankarray_csrbank1_busy_re;
+    cycles_re <= csr_bankarray_csrbank1_cycles_re;
     csr_bankarray_sel_r <= csr_bankarray_sel;
     csr_bankarray_interface2_bank_bus_dat_r <= 1'd0;
     if (csr_bankarray_csrbank2_sel) begin
@@ -7303,8 +7354,11 @@ always @(posedge sys_clk) begin
         b9_re <= 1'd0;
         _c_storage <= 32'd0;
         _c_re <= 1'd0;
+        nnz_storage <= 8'd0;
+        nnz_re <= 1'd0;
         result_re <= 1'd0;
         busy_re <= 1'd0;
+        cycles_re <= 1'd0;
         spiflash_phy_storage <= 8'd1;
         spiflash_phy_re <= 1'd0;
         spiflash_phy_div <= 8'd0;
@@ -7568,34 +7622,36 @@ assign basesoc_uart_rx_fifo_rdport_dat_r = storage_2_dat1;
 //------------------------------------------------------------------------------
 dotproduct dotproduct(
 	// Inputs.
-	.a0_i     (a_sigs0),
-	.a1_i     (a_sigs1),
-	.a2_i     (a_sigs2),
-	.a3_i     (a_sigs3),
-	.a4_i     (a_sigs4),
-	.a5_i     (a_sigs5),
-	.a6_i     (a_sigs6),
-	.a7_i     (a_sigs7),
-	.a8_i     (a_sigs8),
-	.a9_i     (a_sigs9),
-	.b0_i     (b_sigs0),
-	.b1_i     (b_sigs1),
-	.b2_i     (b_sigs2),
-	.b3_i     (b_sigs3),
-	.b4_i     (b_sigs4),
-	.b5_i     (b_sigs5),
-	.b6_i     (b_sigs6),
-	.b7_i     (b_sigs7),
-	.b8_i     (b_sigs8),
-	.b9_i     (b_sigs9),
-	.c_i      (c_sig),
-	.clk_i    (sys_clk),
-	.rst_ni   ((~sys_rst)),
-	.start_i  (start_sig),
+	.a0_i          (a_sigs0),
+	.a1_i          (a_sigs1),
+	.a2_i          (a_sigs2),
+	.a3_i          (a_sigs3),
+	.a4_i          (a_sigs4),
+	.a5_i          (a_sigs5),
+	.a6_i          (a_sigs6),
+	.a7_i          (a_sigs7),
+	.a8_i          (a_sigs8),
+	.a9_i          (a_sigs9),
+	.b0_i          (b_sigs0),
+	.b1_i          (b_sigs1),
+	.b2_i          (b_sigs2),
+	.b3_i          (b_sigs3),
+	.b4_i          (b_sigs4),
+	.b5_i          (b_sigs5),
+	.b6_i          (b_sigs6),
+	.b7_i          (b_sigs7),
+	.b8_i          (b_sigs8),
+	.b9_i          (b_sigs9),
+	.c_i           (c_sig),
+	.clk_i         (sys_clk),
+	.nnz_i         (nnz_sig),
+	.rst_ni        ((~sys_rst)),
+	.start_i       (start_sig),
 
 	// Outputs.
-	.busy_o   (busy_sig),
-	.result_o (result_sig)
+	.busy_o        (busy_sig),
+	.cycle_count_o (cycles_sig),
+	.result_o      (result_sig)
 );
 
 //------------------------------------------------------------------------------
@@ -10200,5 +10256,5 @@ IFS1P3BX IFS1P3BX_32(
 endmodule
 
 // -----------------------------------------------------------------------------
-//  Auto-Generated by LiteX on 2025-12-18 11:37:04.
+//  Auto-Generated by LiteX on 2025-12-19 00:48:50.
 //------------------------------------------------------------------------------

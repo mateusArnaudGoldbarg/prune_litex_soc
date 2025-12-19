@@ -24,7 +24,7 @@ main.o: main.c \
  /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/string.h \
  /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/strings.h \
  /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/string.h \
- model.h data.h \
+ model.h model_pruned.h model_compressed.h data.h \
  /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/unistd.h \
  /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/unistd.h \
  /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/_ansi.h \
@@ -32,6 +32,13 @@ main.o: main.c \
  /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/endian.h \
  /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/_endian.h \
  /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/types.h \
+ /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/math.h \
+ /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/ieeefp.h \
+ /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/math.h \
+ /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/time.h \
+ /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/time.h \
+ /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/timespec.h \
+ /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/_timespec.h \
  /home/mateus/Documentos/embarca/oss/litex/litex/litex/soc/software/include/irq.h \
  /home/mateus/Documentos/embarca/oss/litex/litex/litex/soc/cores/cpu/picorv32/irq.h \
  /home/mateus/Documentos/embarca/oss/litex/litex/litex/soc/software/include/system.h \
@@ -67,6 +74,8 @@ main.o: main.c \
 /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/strings.h:
 /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/string.h:
 model.h:
+model_pruned.h:
+model_compressed.h:
 data.h:
 /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/unistd.h:
 /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/unistd.h:
@@ -75,6 +84,13 @@ data.h:
 /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/endian.h:
 /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/_endian.h:
 /home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/types.h:
+/home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/math.h:
+/home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/ieeefp.h:
+/home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/math.h:
+/home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/time.h:
+/home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/time.h:
+/home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/timespec.h:
+/home/mateus/Documentos/embarca/oss/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/_timespec.h:
 /home/mateus/Documentos/embarca/oss/litex/litex/litex/soc/software/include/irq.h:
 /home/mateus/Documentos/embarca/oss/litex/litex/litex/soc/cores/cpu/picorv32/irq.h:
 /home/mateus/Documentos/embarca/oss/litex/litex/litex/soc/software/include/system.h:
