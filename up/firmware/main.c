@@ -114,15 +114,6 @@ static void toggle_led(void)
     i = leds_out_read();
     leds_out_write(!i);
 }
-/*
-static long calc_dot_product_SW(int A[], int B[], int s){
-	long result = 0;
-	for(int i = 0; i < s; i++){
-		result += A[i]*B[i];
-	}
-	return result;
-} 
-*/
 
 void print_int64(int64_t val) {
     if (val < 0) {
@@ -166,18 +157,12 @@ static inline uint64_t rdcycle(void)
 
 static void calc_dot_product(void)
 {
-	int32_t A[10]= {0,0,0,0,0,0,0,0,0,0};
-	int32_t B[10]= {0,0,0,0,0,0,0,0,0,0};
 	int32_t y[10] = {0,0,0,0,0,0,0,0,0,0};
 	uint64_t result;
-	uint32_t result_invertido;
 	
 	// ===== contadores de tempo =====
-	uint64_t t_start, t_end, delta;
 	uint32_t t_dense1 = 0;
-	uint32_t t_relu1  = 0;
 	uint32_t t_dense2 = 0;
-	uint32_t t_relu2  = 0;
 	uint32_t t_dense3 = 0;
 	uint32_t cycles = 0;
 	
@@ -216,43 +201,18 @@ static void calc_dot_product(void)
 			dotProduct_b9_write(dense_1[9][i]);
 			dotProduct_bias_write(bias_1[i]);
 			
-			//printf("Iniciando calculos...\n");
-			// Inicia cálculo no hardware
-			
-
 			dotProduct_start_write(1);
-			
-			//timer0_update_value_write(1);
-			//t_start = timer0_value_read();
 			
 			while (dotProduct_busy_read());
 			
 			result = dotProduct_result_read();
 		    	
-		    	//timer0_update_value_write(1);
-
-			//t_end   = timer0_value_read();
-
-			//delta = t_start - t_end;
 			cycles = dotProduct_cycles_read();
 			t_dense1 += cycles;
-			
-			//printf("nnz = %ld\n", dotProduct_nnz_read());
-
-
-    			//printf("Dense1 delta[%d] = %lu ticks\n", i, delta);
-    			
-		    	
-		    	//result_invertido = (~result +1)>>15;
 		    	
 		    	y[i] = result >>15;
-		    	
-		    	//y[i] = (signed long)(~(result_invertido));
-			//printf("%ld\n", y[i]);
 		}
-		
-		//printf("DENSE 1 - %lu ticks\n", t_dense1);
-		
+				
 		times_dense1[n] = t_dense1;
 		
 		t_dense1 = 0;
@@ -263,15 +223,6 @@ static void calc_dot_product(void)
 				y[j] = 0;
 			}
 		}
-		
-		
-
-		
-		//printf("PRIMEIRA CAMADA: \n");
-		//for(int j=0; j<10;j++){
-		//	printf("%ld ", y[j]);
-		//}
-		//printf("\n");
 		
 		//DENSE_2
 		dotProduct_a0_write(y[0]); 
@@ -290,12 +241,6 @@ static void calc_dot_product(void)
 			y[j] = 0;
 		}
 		
-		//printf("PESOS DA SEGUNDA CAMADA: \n");
-		//for(int j=0; j<10;j++){
-		//	printf("%d ", dense_2[j][0]);
-		//}
-		//printf("\n");
-		
 		for(int i=0;i<10;i++){
 		
 			dotProduct_nnz_write(10);
@@ -313,40 +258,22 @@ static void calc_dot_product(void)
 			
 			dotProduct_bias_write(bias_2[i]);
 			
-			//printf("Iniciando calculos...\n");
 			// Inicia cálculo no hardware
 			dotProduct_start_write(1);
 			
-			//timer0_update_value_write(1);
-			//t_start = timer0_value_read();
 			// Espera o hardware terminar
 			while (dotProduct_busy_read());
 			
 			result = dotProduct_result_read();
 		    	
 		    	cycles = dotProduct_cycles_read();
-		    	//timer0_update_value_write(1);
-
-			//t_end   = timer0_value_read();
-
-			//delta = t_start - t_end;
 			
 			t_dense2 += cycles;
-
-    			//printf("Dense2 delta[%d] = %lu ticks\n", i, delta);
-    			
-    			
-		    	
-		    	//result_invertido = (~result +1)>>15;
 		    	
 		    	y[i] = result >> 15;
-		    	
-		    	//y[i] = (signed long)(~(result_invertido));
-			//printf("%ld\n", y[i]);
 		}
 		
 		times_dense2[n] = t_dense2;
-		//printf("DENSE 2 - %lu ticks\n", t_dense2);
 		t_dense2 = 0;
 		
 		//relu_2
@@ -355,14 +282,6 @@ static void calc_dot_product(void)
 				y[j] = 0;
 			}
 		}
-
-		
-		//printf("SEGUNDA CAMADA: \n");
-		//for(int j=0; j<10;j++){
-		//	printf("%ld ", y[j]);
-		//}
-		//printf("\n");
-		
 		
 		//DENSE_3
 		dotProduct_a0_write(y[0]); 
@@ -391,41 +310,23 @@ static void calc_dot_product(void)
 			
 			dotProduct_bias_write(bias_3[i]);
 			
-			//printf("Iniciando calculos...\n");
 			// Inicia cálculo no hardware
 			dotProduct_start_write(1);
 			
-			//timer0_update_value_write(1);
-			//t_start = timer0_value_read();
 			// Espera o hardware terminar
 			while (dotProduct_busy_read());
 			
 			result = dotProduct_result_read();
 		    	
-		    	
-		    	//timer0_update_value_write(1);
-
-			//t_end   = timer0_value_read();
 			cycles = dotProduct_cycles_read();
-			//delta = t_start - t_end;
 			
-			t_dense3 += cycles;
-
-    			//printf("Dense3 delta[%d] = %lu ticks\n", i, delta);
-    			
-    			
-    			
-		    	//result_invertido = (~result +1)>>15;
-		    	
+			t_dense3 += cycles;    			
+    					    	
 		    	y[i] = result >> 15;
 		    	
-		    	//y[i] = (signed long)(~(result_invertido));
-			//printf("%ld\n", y[i]);
 		}
-		//printf("TERCEIRA CAMADA: \n");
 		
 		times_dense3[n] = t_dense3;
-		//printf("DENSE 3 - %lu ticks\n", t_dense3);
 		t_dense3 = 0;
 		
 		int max_i = 0;
@@ -465,14 +366,10 @@ static void calc_prune(void)
 	int32_t B[10]= {0,0,0,0,0,0,0,0,0,0};
 	int32_t y[10] = {0,0,0,0,0,0,0,0,0,0};
 	uint64_t result;
-	uint32_t result_invertido;
 	
 	// ===== contadores de tempo =====
-	uint64_t t_start, t_end, delta;
 	uint32_t t_dense1 = 0;
-	uint32_t t_relu1  = 0;
 	uint32_t t_dense2 = 0;
-	uint32_t t_relu2  = 0;
 	uint32_t t_dense3 = 0;
 	uint32_t cycles = 0;
 	
@@ -581,47 +478,21 @@ static void calc_prune(void)
 			
 			dotProduct_bias_write(bias_1_p[i]);
 			
-			//printf("Iniciando calculos...\n");
 			// Inicia cálculo no hardware
-			
 
 			dotProduct_start_write(1);
 
-			
-			//timer0_update_value_write(1);
-			//t_start = timer0_value_read();
 			while (dotProduct_busy_read());
 			
-			
-	
 			result = dotProduct_result_read();
 		    	
 		    	cycles = dotProduct_cycles_read();
 			t_dense1 += cycles;
-			
-			//printf("nnz = %ld\n", dotProduct_nnz_read());
-			
-		    	//timer0_update_value_write(1);
-
-			//t_end   = timer0_value_read();
-
-			//delta = t_start - t_end;
-			
-			//t_dense1 += delta;
-
-    			//printf("Dense1 delta[%d] = %lu ticks\n", i, delta);
-    			
-		    	
-		    	//result_invertido = (~result +1)>>15;
-		    	
+				
 		    	y[i] = result >>15;
 		    	
-		    	//y[i] = (signed long)(~(result_invertido));
-			//printf("%ld\n", y[i]);
 		}
-		
-		//printf("DENSE 1 - %lu ticks\n", t_dense1);
-		
+				
 		times_dense1[n] = t_dense1;
 		
 		t_dense1 = 0;
@@ -633,34 +504,10 @@ static void calc_prune(void)
 			}
 		}
 		
-		
-
-		
-		//printf("PRIMEIRA CAMADA: \n");
-		//for(int j=0; j<10;j++){
-		//	printf("%ld ", y[j]);
-		//}
-		//printf("\n");
-		
-		//DENSE_2
-		
-		
-		/*
-		for(int j=0; j<10;j++){
-			y[j] = 0;
-		}
-		*/
-		
 		for(int j=0; j<10;j++){
 			A[j] = 0;
 			B[j] = 0;
 		}
-		
-		//printf("PESOS DA SEGUNDA CAMADA: \n");
-		//for(int j=0; j<10;j++){
-		//	printf("%d ", dense_2[j][0]);
-		//}
-		//printf("\n");
 		
 		for(int i=0;i<10;i++){
 			dotProduct_nnz_write(nnz_2[i]);
@@ -757,41 +604,21 @@ static void calc_prune(void)
 			
 			dotProduct_bias_write(bias_2_p[i]);
 			
-			//printf("Iniciando calculos...\n");
 			// Inicia cálculo no hardware
 			dotProduct_start_write(1);
-			
-			//timer0_update_value_write(1);
-			//t_start = timer0_value_read();
 			
 			// Espera o hardware terminar
 			while (dotProduct_busy_read());
 			
 			result = dotProduct_result_read();
 		    	
-		    	
-		    	//timer0_update_value_write(1);
-
-			//t_end   = timer0_value_read();
-
-			//delta = t_start - t_end;
 			cycles = dotProduct_cycles_read();
 			t_dense2 += cycles;
-
-    			//printf("Dense2 delta[%d] = %lu ticks\n", i, delta);
-    			
-    			
-		    	
-		    	//result_invertido = (~result +1)>>15;
 		    	
 		    	y[i] = result >> 15;
-		    	
-		    	//y[i] = (signed long)(~(result_invertido));
-			//printf("%ld\n", y[i]);
 		}
 		
 		times_dense2[n] = t_dense2;
-		//printf("DENSE 2 - %lu ticks\n", t_dense2);
 		t_dense2 = 0;
 		
 		//relu_2
@@ -804,15 +631,7 @@ static void calc_prune(void)
 		for(int j=0; j<10;j++){
 			A[j] = 0;
 			B[j] = 0;
-		}
-
-		
-		//printf("SEGUNDA CAMADA: \n");
-		//for(int j=0; j<10;j++){
-		//	printf("%ld ", y[j]);
-		//}
-		//printf("\n");
-		
+		}		
 		
 		//DENSE_3
 		
@@ -864,40 +683,20 @@ static void calc_prune(void)
 			
 			dotProduct_bias_write(bias_3_p[i]);
 			
-			//printf("Iniciando calculos...\n");
 			// Inicia cálculo no hardware
 			dotProduct_start_write(1);
-			//timer0_update_value_write(1);
-			//t_start = timer0_value_read();
 			// Espera o hardware terminar
 			while (dotProduct_busy_read());
 			
 			result = dotProduct_result_read();
 		    	
-		    	
-		    	//timer0_update_value_write(1);
-
-			//t_end   = timer0_value_read();
-
-			//delta = t_start - t_end;
 			cycles = dotProduct_cycles_read();
 			t_dense3 += cycles;
-
-    			//printf("Dense3 delta[%d] = %lu ticks\n", i, delta);
-    			
-    			
-    			
-		    	//result_invertido = (~result +1)>>15;
 		    	
 		    	y[i] = result >> 15;
-		    	
-		    	//y[i] = (signed long)(~(result_invertido));
-			//printf("%ld\n", y[i]);
 		}
-		//printf("TERCEIRA CAMADA: \n");
 		
 		times_dense3[n] = t_dense3;
-		//printf("DENSE 3 - %lu ticks\n", t_dense3);
 		t_dense3 = 0;
 		
 		int max_i = 0;
