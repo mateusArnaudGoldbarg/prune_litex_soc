@@ -1,18 +1,18 @@
 # Aceleração de Inferência em FPGA por Meio de Poda Consciente e Execução Esparsa
 
-Este repositório apresenta a implementação e avaliação de um modelo de **Machine Learning comprimido**, utilizando **poda iterativa consciente** e **execução esparsa** em um sistema embarcado baseado em **FPGA**, com **SoC desenvolvido via LiteX**.
+Este repositório apresenta a implementação e avaliação de um modelo de Machine Learning comprimido, utilizando poda iterativa consciente e execução esparsa em um sistema embarcado baseado em FPGA, com SoC desenvolvido via LiteX.
 
-O objetivo principal é **reduzir o tempo de inferência e o consumo energético**, mantendo desempenho satisfatório, explorando a esparsidade estrutural do modelo diretamente no hardware.
+O objetivo principal é reduzir o tempo de inferência e o consumo energético, mantendo desempenho satisfatório, explorando a esparsidade estrutural do modelo diretamente no hardware.
 
 ---
 
 ## Visão Geral
 
-Modelos de Machine Learning modernos apresentam elevado desempenho, porém à custa de **altas demandas computacionais**, o que limita sua aplicação em **sistemas embarcados**.  
+Modelos de Machine Learning modernos apresentam elevado desempenho, porém à custa de altas demandas computacionais, o que limita sua aplicação em sistemas embarcados.  
 
-Neste trabalho, aplica-se **poda iterativa consciente durante o treinamento**, seguida de **quantização em ponto fixo**, e a inferência é executada em um **acelerador dedicado**, capaz de explorar **operações esparsas**.
+Neste trabalho, aplica-se poda iterativa consciente durante o treinamento, seguida de quantização em ponto fixo, e a inferência é executada em um acelerador dedicado, capaz de explorar operações esparsas.
 
-Os resultados demonstram uma **redução de aproximadamente 70% no número de ciclos de clock**, com **speedup superior a 3×** em relação ao modelo denso.
+Os resultados demonstram uma redução de aproximadamente 70% no número de ciclos de clock, com speedup superior a 3× em relação ao modelo denso.
 
 ---
 
@@ -33,7 +33,7 @@ Os resultados demonstram uma **redução de aproximadamente 70% no número de ci
 
 ## Arquitetura do Sistema
 
-O sistema segue uma abordagem de **co-design hardware–software**, composta por:
+O sistema segue uma abordagem de co-design hardware–software, composta por:
 
 - **Treinamento**
   - Realizado off-line em ambiente computacional
