@@ -32,6 +32,7 @@ Os resultados demonstram uma redução de aproximadamente 70% no número de cicl
 ---
 
 ## Arquitetura do Sistema
+![Arquitetura](imagens/diagrama.png)
 
 O sistema segue uma abordagem de co-design hardware–software, composta por:
 
@@ -100,6 +101,9 @@ litex_term /dev/ttyACM0 --kernel firmware/firmware.bin
 ```
 
 ## Executar Modelo Dense ou Esparso
-### No menu, escolher "dense", para executar inferência com modelo denso ou "prune" para modelo esparso.
+No menu, escolher "dense", para executar inferência com modelo denso ou "prune" para modelo esparso.
 
-### O console apresentará a quantidade de ciclos para cada camada do modelo
+![Menu](imagens/menu.png)
+
+O console apresentará a quantidade de ciclos para cada camada do modelo
+![Results](imagens/results.png)
