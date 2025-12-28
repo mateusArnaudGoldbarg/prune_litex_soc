@@ -66,4 +66,40 @@ O sistema segue uma abordagem de co-design hardware–software, composta por:
 
 - **FPGA**: Colorlight i9  
 - **Frequência de operação**: 60 MHz  
-- **Métrica**: Número de ciclos de clock por camada  
+- **Métrica**: Número de ciclos de clock por camada
+
+---
+
+## Execução do Projeto
+### Clonar repositório
+```sh
+git clone https://github.com/mateusArnaudGoldbarg/prune_litex_soc.git
+cd prune_litex_soc//up
+```
+### Ativar o ambiente do OSS CAD SUITE
+```sh
+source Path/to/oss-cad-suite/environment
+```
+### Compilar Firmware
+```sh
+cd firmware
+make
+cd ..
+```
+### Compilar SoC para gerar FPGA's bitstream
+```sh
+python3 litex/colorlight_i5.py --board i9 --revision 7.2 --build --cpu-type=picorv32  --ecppack-compress
+```
+### Gravar bitstream of FPGA
+```sh
+sudo Path/to/oss-cad-suite/bin/openFPGALoader -b colorlight-i5 build/colorlight_i5/gateware/colorlight_i5.bit
+```
+### Executar Firmware
+```sh
+litex_term /dev/ttyACM0 --kernel firmware/firmware.bin
+```
+
+## Executar Modelo Dense ou Esparso
+### No menu, escolher "dense", para executar inferência com modelo denso ou "prune" para modelo esparso.
+
+### O console apresentará a quantidade de ciclos para cada camada do modelo
